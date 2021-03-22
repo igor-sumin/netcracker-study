@@ -66,5 +66,7 @@ public class MyTriangle extends MyPoint implements Figure {
         System.out.println(mt.getArea());
         System.out.println(mt.getPerimeter());
         System.out.println(mt.getType());
+
+        System.out.println();
     }
 }

@@ -5,18 +5,6 @@ import java.util.Arrays;
 public class MyPolynomial {
     private final double[] coeffs;
 
-    private String getTwoMembers() {
-        // for cases of:
-        // -2x + 4 or 3x - 1
-        return (
-            Math.abs(coeffs[1]) + "x " + (
-                coeffs[0] != 0 ? (
-                    coeffs[0] > 0 ? "+ " : "- "
-                ) + Math.abs(coeffs[0]) : ""
-            )
-        );
-    }
-
     public MyPolynomial() {
         this(new double[]{});
     }
@@ -44,7 +32,11 @@ public class MyPolynomial {
         if (coeffs.length == 1) {
             return "" + coeffs[0];
         } else if (coeffs.length == 2) {
-            return getTwoMembers();
+            return Math.abs(coeffs[1]) + "x " + (
+                    coeffs[0] != 0 ? (
+                            coeffs[0] > 0 ? "+ " : "- "
+                    ) + Math.abs(coeffs[0]) : ""
+            );
         }
 
         StringBuilder result = new StringBuilder();
@@ -117,10 +109,10 @@ public class MyPolynomial {
         MyPolynomial[] grid = new MyPolynomial[degreeThis];
 
         // Creating a grid of elements multiplied by each other in turn
-        // Example:
-        // [20, -15, -40,   5,   0, 0]
-        // [0,   12,  -9, -24,   3, 0]
-        // [0,    0,   8,  -6, -16, 2]
+        // Example for (5 + 3x + 2x^2) * (4 - 3x - 8x^2 + x^3):
+        // [20, -15, -40, 5, 0, 0]
+        // [12,  -9, -24, 3, 0, 0]
+        // [8,   -6, -16, 2, 0, 0]
         //
         for (int i = 0; i < degreeThis; i++) {
             double[] temp = new double[degreeThis + degreeOp2 - 1];
@@ -129,6 +121,10 @@ public class MyPolynomial {
             }
 
             // Shift the elements depending on the degree of the polynomials
+            // [20, -15, -40,   5,   0, 0]
+            // [0,   12,  -9, -24,   3, 0]
+            // [0,    0,   8,  -6, -16, 2]
+            //
             grid[i] = new MyPolynomial(i, degreeOp2, temp);
         }
 
@@ -154,5 +150,7 @@ public class MyPolynomial {
 
         System.out.println(mp1.add(mp2).toString());
         System.out.println(mp1.multiply(mp2).toString());
+
+        System.out.println();
     }
 }

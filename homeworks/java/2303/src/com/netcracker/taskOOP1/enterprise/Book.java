@@ -146,5 +146,7 @@ public class Book {
 
         b.setQnt(3);
         System.out.println(b.getQnt());
+
+        System.out.println();
     }
 }

@@ -13,6 +13,7 @@ import com.netcracker.taskOOP1.myfigures.MyTriangle;
 
 import com.netcracker.taskOOP2.MyComplex;
 import com.netcracker.taskOOP2.MyPolynomial;
+import com.netcracker.taskOOP2.Ball;
 
 public class Main {
     /**
@@ -33,12 +34,13 @@ public class Main {
     public static void tasksOOP2(String[] args) {
         MyComplex.main(args);
         MyPolynomial.main(args);
+        Ball.main(args);
     }
 
 
     public static void main(String[] args) {
-//        System.out.println("------ First part ------" + '\n');
-//        Main.tasksOOP1(args);
+        System.out.println("------ First part ------" + '\n');
+        Main.tasksOOP1(args);
         System.out.println("------ Second part ------" + '\n');
         Main.tasksOOP2(args);
     }

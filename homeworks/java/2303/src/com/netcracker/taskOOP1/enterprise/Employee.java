@@ -69,5 +69,7 @@ public class Employee {
         System.out.println(e.getId());
         System.out.println(e.getSalary());
         System.out.println(e.raiseSalary(20));
+
+        System.out.println();
     }
 }

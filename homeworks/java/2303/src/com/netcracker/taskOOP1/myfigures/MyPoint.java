@@ -73,7 +73,6 @@ public class MyPoint {
     public static void main(String[] args) {
         System.out.println("--- 5. MyPoint class ---");
 
-        System.out.println("mp1: ");
         MyPoint mp = new MyPoint(1, 1);
         System.out.println(mp.toString());
         System.out.println(mp.getX());
@@ -81,7 +80,6 @@ public class MyPoint {
 
         System.out.println();
 
-        System.out.println("mp2: ");
         MyPoint mp2 = new MyPoint(0, 4);
         mp2.setX(4);
         System.out.println(mp2.getX());
