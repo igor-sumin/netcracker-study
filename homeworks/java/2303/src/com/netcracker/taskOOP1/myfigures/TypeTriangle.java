@@ -1,4 +1,4 @@
-package com.netcracker.myfigures;
+package com.netcracker.taskOOP1.myfigures;
 
 public enum TypeTriangle {
     Scalene, Isosceles, Equilateral;

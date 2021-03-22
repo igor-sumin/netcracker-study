@@ -1,4 +1,4 @@
-package com.netcracker.enterprise;
+package com.netcracker.taskOOP1.enterprise;
 
 public enum Gender {
     MALE, FEMALE, UNKNOWN;

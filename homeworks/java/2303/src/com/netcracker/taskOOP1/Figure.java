@@ -1,4 +1,4 @@
-package com.netcracker;
+package com.netcracker.taskOOP1;
 
 public interface Figure {
     /** Calculating the area of a figure */

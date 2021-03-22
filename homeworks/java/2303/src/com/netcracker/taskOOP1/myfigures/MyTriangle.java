@@ -1,6 +1,6 @@
-package com.netcracker.myfigures;
+package com.netcracker.taskOOP1.myfigures;
 
-import com.netcracker.Figure;
+import com.netcracker.taskOOP1.Figure;
 
 public class MyTriangle extends MyPoint implements Figure {
     private final MyPoint v1, v2, v3;

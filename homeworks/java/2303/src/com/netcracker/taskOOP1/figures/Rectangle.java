@@ -1,6 +1,6 @@
-package com.netcracker.figures;
+package com.netcracker.taskOOP1.figures;
 
-import com.netcracker.Figure;
+import com.netcracker.taskOOP1.Figure;
 
 public class Rectangle implements Figure {
     private double length;
