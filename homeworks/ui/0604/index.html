@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор квадратных уравнений</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Онлайн калькулятор. Решение квадратных уравнений</h1>
+        <p>Используя данный калькулятор для решения квадратных уравнений, вы сможете найти корни квадратного уравнения.</p>
+    </header>
+
+    <section class="output_section">
+        <h2>Калькулятор квадратных уравнений</h2>
+        <div class="calc">
+            <input id="cell_1" tabindex="1" name="input_calc" type="number">
+            <span class="formula_calc">x</span><sup>2</sup>&nbsp;+&nbsp;
+
+            <input id="cell_2" tabindex="2" name="input_calc" type="number">
+            <span class="formula_calc">x</span>&nbsp;+&nbsp;
+
+            <input id="cell_3" tabindex="3" name="input_calc" type="number">
+            &nbsp;=&nbsp;0
+
+            <p><input id="cell_button" type="button" value="Решить квадратное уравнение"></p>
+        </div>
+    </section>
+    
+    <section class="solution_section">
+        <p>Получаем <output id="get_roots"></output></p>
+        <div class="table_vals">
+            <h2>История результатов</h2>
+            <table id="hist_table">
+                <thead>
+                    <tr>
+                        <td>x<sub>1</sub></td>
+                        <td>x<sub>2</sub></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
