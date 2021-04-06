@@ -5,8 +5,11 @@ import com.netcracker.chapters.fourth.Solutions4;
 import com.netcracker.chapters.second.Solutions2;
 import com.netcracker.chapters.third.Solutions3;
 
+/**
+ * @author Igor Sumin
+ */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Solutions1.main(args);      // chapter 1
         Solutions2.main(args);      // chapter 2
         Solutions3.main(args);      // chapter 3
