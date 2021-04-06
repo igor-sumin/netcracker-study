@@ -12,6 +12,10 @@ public class Book {
             this("Anonymous", "", Gender.UNKNOWN);
         }
 
+        public Author(Author op2) {
+            this(op2.getName(), op2.getEmail(), op2.getGender());
+        }
+
         public Author(String name, String email, String gender) {
             this(name, email, Gender.setGender(gender));
         }
@@ -73,7 +77,13 @@ public class Book {
 
     public Book(String name, Author[] authors, double price, int qnt) {
         this.name = name;
-        this.authors = authors;
+        // (?) "Если вы не хотите совместного использования, вам нужно сделать копию массива". Хорстманн
+        // А как без цикла это сделать для массива обьектов - не понятно. p.s. arrayOf не катит
+        this.authors = new Author[authors.length];
+        for (int i = 0; i < authors.length; i++) {
+            this.authors[i] = new Author(authors[i]);
+        }
+
         this.price = price;
         this.qnt = qnt;
     }
