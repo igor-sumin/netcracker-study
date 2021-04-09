@@ -31,7 +31,8 @@ public class MyPolynomial {
     public String toString() {
         if (coeffs.length == 1) {
             return "" + coeffs[0];
-        } else if (coeffs.length == 2) {
+        }
+        else if (coeffs.length == 2) {
             return Math.abs(coeffs[1]) + "x " + (
                     coeffs[0] != 0 ? (
                             coeffs[0] > 0 ? "+ " : "- "
@@ -40,21 +41,16 @@ public class MyPolynomial {
         }
 
         StringBuilder result = new StringBuilder();
-        boolean flag = true;
-
         for (int i = coeffs.length - 1; i >= 0; i--) {
             if (coeffs[i] == 0) {
                 continue;
             }
 
-            if (!flag) {
-                if (coeffs[i] > 0.) {
-                    result.append(" + ");
-                } else {
-                    result.append(" - ");
-                }
+            if (coeffs[i] > 0) {
+                result.append(" + ");
+            } else {
+                result.append(" - ");
             }
-            flag = false;
 
             result.append(Math.abs(coeffs[i]));
             if (i != 0) {
@@ -62,6 +58,7 @@ public class MyPolynomial {
             }
         }
 
+        result.replace(0, 3, "");
         return result.toString();
     }
 

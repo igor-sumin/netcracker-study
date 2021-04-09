@@ -2,6 +2,8 @@ package com.netcracker.taskOOP1.myfigures;
 
 import com.netcracker.taskOOP1.Figure;
 
+import java.lang.reflect.Type;
+
 public class MyTriangle extends MyPoint implements Figure {
     private final MyPoint v1, v2, v3;
 
@@ -15,8 +17,8 @@ public class MyTriangle extends MyPoint implements Figure {
 
     public MyTriangle(MyPoint mp1, MyPoint mp2, MyPoint mp3) {
         this(mp1.getX(), mp1.getY(),
-                mp2.getX(), mp2.getY(),
-                mp3.getX(), mp3.getY()
+             mp2.getX(), mp2.getY(),
+             mp3.getX(), mp3.getY()
         );
     }
 
@@ -30,8 +32,17 @@ public class MyTriangle extends MyPoint implements Figure {
         );
     }
 
-    public Enum<TypeTriangle> getType() {
-        return TypeTriangle.getType(v1, v2, v3);
+    public String getType() {
+        int cnt = (v1.distance(v2) == v1.distance(v3) ? 1 : 0) +
+                  (v1.distance(v2) == v2.distance(v3) ? 1 : 0) +
+                  (v1.distance(v3) == v2.distance(v3) ? 1 : 0);
+
+        return switch (cnt) {
+            case 0, 1 -> TypeTriangle.Scalene.name();
+            case 2 -> TypeTriangle.Isosceles.name();
+            case 3 -> TypeTriangle.Equilateral.name();
+            default -> throw new IllegalStateException("Unexpected value: " + cnt);
+        };
     }
 
     @Override

@@ -125,15 +125,8 @@ public class Book {
 
     public String getAuthorsNames() {
         StringBuilder names = new StringBuilder();
-        boolean first = true;
-
         for (Author author : authors) {
-            if (!first) {
-                names.append(", ");
-            }
-            first = false;
-
-            names.append(author.getName());
+            names.append(author.getName()).append(" ");
         }
 
         return names.toString();

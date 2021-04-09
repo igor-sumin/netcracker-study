@@ -1,7 +1,3 @@
-/**
- * Created by Igor Sumin
- */
-
 package com.netcracker;
 
 import com.netcracker.taskOOP1.figures.Circle;
@@ -15,6 +11,9 @@ import com.netcracker.taskOOP2.MyComplex;
 import com.netcracker.taskOOP2.MyPolynomial;
 import com.netcracker.taskOOP2.Ball;
 
+/**
+ * @author Igor Sumin
+ */
 public class Main {
     /**
      * The first part of the implementation of homework classes to 23.03.2021
