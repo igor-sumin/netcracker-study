@@ -38,9 +38,9 @@ public class MyTriangle extends MyPoint implements Figure {
                   (v1.distance(v3) == v2.distance(v3) ? 1 : 0);
 
         return switch (cnt) {
-            case 0, 1 -> TypeTriangle.Scalene.name();
-            case 2 -> TypeTriangle.Isosceles.name();
-            case 3 -> TypeTriangle.Equilateral.name();
+            case 0, 1 -> TypeTriangle.SCALENE.nameLowerCase();
+            case 2 -> TypeTriangle.ISOSCELES.nameLowerCase();
+            case 3 -> TypeTriangle.EQUILATERAL.nameLowerCase();
             default -> throw new IllegalStateException("Unexpected value: " + cnt);
         };
     }
