@@ -1,6 +1,9 @@
 package com.netcracker;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Random;
 
 public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
     private Node<E> first, last;
@@ -22,28 +25,22 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         this.size = 0;
     }
 
-    public MyLinkedList(MyLinkedList<E> mll) throws CloneNotSupportedException {
-        MyLinkedList<E> other = (MyLinkedList<E>) mll.clone();
+    public MyLinkedList(MyLinkedList<E> mll) {
+        this.first = this.last = null;
+        this.size = 0;
 
-        this.size = other.size;
-        this.first = other.first;
-        this.last = other.last;
-    }
-
-    @SuppressWarnings("unchecked")
-    private MyLinkedList<E> superClone() {
-        try {
-            return (MyLinkedList<E>) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new InternalError(e);
+        for (Node<E> temp = mll.first; temp != null; temp = temp.next) {
+            linkLast(temp.item);
         }
     }
 
     /**
      * Возвращаем полное копирование списка
      */
-    public Object clone() {
-        MyLinkedList<E> clone = superClone();
+    @Override
+    @SuppressWarnings("unchecked")
+    public MyLinkedList<E> clone() throws CloneNotSupportedException {
+        MyLinkedList<E> clone = (MyLinkedList<E>) super.clone();
 
         clone.first = clone.last = null;
         clone.size = 0;
@@ -54,7 +51,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return clone;
     }
 
-    /*
+    /**
      * Проверяем, существует ли данный индекс в списке
      */
     private void isElementIndex(int index) {
@@ -63,7 +60,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         }
     }
 
-    /*
+    /**
      * Вставляем элемент в начало списка
      */
     public void linkFirst(E element) {
@@ -80,7 +77,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         this.size++;
     }
 
-    /*
+    /**
      * Вставляем element перед ненулевым node
      */
     public void linkBefore(E element, Node<E> node) {
@@ -99,7 +96,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         this.size++;
     }
 
-    /*
+    /**
      * Вставляем элемент в конец списка
      */
     public void linkLast(E element) {
@@ -116,7 +113,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         this.size++;
     }
 
-    /*
+    /**
      * Возвращаем ненулевой node по индексу
      */
     public Node<E> node(int index) {
@@ -132,7 +129,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
             }
         } else {
             res = this.last;
-            for (int i = size - 1; i >= 0; i--) {
+            for (int i = this.size - 1; i > index; i--) {
                 res = res.prev;
             }
         }
@@ -140,7 +137,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return res;
     }
 
-    /*
+    /**
      * Удаляем ненулевой node, извлекая элемент
      */
     public E unlink(Node<E> node) {
@@ -170,7 +167,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return element;
     }
 
-    /*
+    /**
      * Добавляем элемент в конец списка
      */
     @Override
@@ -178,7 +175,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         linkLast(element);
     }
 
-    /*
+    /**
      * Добавляем указанный элемент в указанную позицию в списке
      */
     @Override
@@ -196,7 +193,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         }
     }
 
-    /*
+    /**
      * Удаляем все элементы из этого списка. После этого вызова список будет пустым
      */
     @Override
@@ -216,7 +213,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         this.size = 0;
     }
 
-    /*
+    /**
      * Возвращаем элемент в указанной позиции index в списке
      */
     @Override
@@ -224,7 +221,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return node(index).item;
     }
 
-    /*
+    /**
      * Возвращаем индекс первого вхождения указанного элемента в списке.
      * Если список не содержит элемента - возвращаем -1.
      */
@@ -241,7 +238,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return -1;
     }
 
-    /*
+    /**
      * Удаляем элемент в указанной позиции в списке
      */
     @Override
@@ -250,7 +247,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return unlink(node(index));
     }
 
-    /*
+    /**
      * Заменяем элемент в указанной позиции в списке указанным элементом.
      */
     @Override
@@ -264,7 +261,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return oldElement;
     }
 
-    /*
+    /**
      * Возвращаем размер списка
      */
     @Override
@@ -272,7 +269,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return this.size;
     }
 
-    /*
+    /**
      * Возвращаем массив, содержащий все элементы в списке в правильной последовательности
      */
     @Override
@@ -297,11 +294,15 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         return a;
     }
 
+
+    /**
+     * Кастомный вариант реализации итератора через анонимный внутренний класс
+     */
     @Override
     public Iterator<E> iterator() {
         MyLinkedList<E> list = this;
 
-        return new Iterator<E>() {
+        return new Iterator<>() {
             Node<E> node = list.first;
 
             @Override
@@ -313,7 +314,7 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
             public E next() {
                 E temp = node.item;
                 node = node.next;
-                
+
                 return temp;
             }
         };
@@ -336,6 +337,83 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
     }
 
     public static void main(String[] args) {
-        System.out.println("hey");
+        System.out.println("--- Testing MyLinkedList ---");
+
+        MyLinkedList<Integer> list1 = new MyLinkedList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            list1.add(random.nextInt(10));
+        }
+
+        System.out.println("list1 (toString): ");
+        System.out.println(list1);
+        System.out.println();
+
+        MyLinkedList<Integer> list2 = new MyLinkedList<>(list1);
+        System.out.println("list2 (before): ");
+        System.out.println(list2);
+
+        System.out.println("list2 (remove): [random]");
+        for (int i = 0; i < 3; i++) {
+            Integer elem = list2.remove(random.nextInt(2));
+            System.out.printf("%d ", elem);
+        }
+        System.out.println();
+
+        System.out.println("list2 (after): ");
+        System.out.println(list2);
+        System.out.println();
+
+        MyLinkedList<Integer> list3 = new MyLinkedList<>();
+        for (int i = 0; i < 5; i++) {
+            list3.add(random.nextInt(10));
+        }
+
+        System.out.println("list3 (before): ");
+        System.out.println(list3);
+
+        System.out.println("list3 (set): ");
+        list3.set(3, 333);
+        list3.set(4, 444);
+        list3.set(2, 222);
+
+        System.out.println("list3 (indexOf): ");
+        System.out.println(list3.indexOf(444));
+
+        System.out.println("list3 (after): ");
+        System.out.println(list3);
+        System.out.println();
+
+        MyLinkedList<Integer> list4 = new MyLinkedList<>();
+        for (int i = 0; i < 5; i++) {
+            list4.add(random.nextInt(10));
+        }
+
+        System.out.println("list4 (before): ");
+        System.out.println(list4);
+
+        System.out.println("list4 (clear):");
+        list4.clear();
+        System.out.println(list4);
+
+        System.out.println("list4 (add): [random]");
+        for (int i = 0; i < 5; i++) {
+            list4.add(random.nextInt(10));
+        }
+
+        for (int i = 0; i < 5; i++) {
+            list4.add(random.nextInt(5), 10 + random.nextInt(10));
+        }
+
+        System.out.println("list4 (after): ");
+        System.out.println(list4);
+        System.out.println();
+
+        System.out.println("iterator: ");
+        for (Iterator<Integer> it = list4.iterator(); it.hasNext(); System.out.printf("%d ", it.next()))
+            ;
+
+        System.out.println("--- Testing done. ---");
     }
 }

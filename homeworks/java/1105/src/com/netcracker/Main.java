@@ -1,6 +1,6 @@
 package com.netcracker;
 
-/*
+/**
  * Copyright 2021 Sumin Igor
  */
 public class Main {
