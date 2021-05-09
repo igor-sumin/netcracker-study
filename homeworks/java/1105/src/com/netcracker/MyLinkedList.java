@@ -1,7 +1,5 @@
 package com.netcracker;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -411,9 +409,10 @@ public class MyLinkedList<E> implements ILinkedList<E>, Iterable<E> {
         System.out.println();
 
         System.out.println("iterator: ");
-        for (Iterator<Integer> it = list4.iterator(); it.hasNext(); System.out.printf("%d ", it.next()))
-            ;
+        for (Integer integer : list4) {
+            System.out.printf("%d ", integer);
+        }
 
-        System.out.println("--- Testing done. ---");
+        System.out.print("\n--- Testing done. ---");
     }
 }
