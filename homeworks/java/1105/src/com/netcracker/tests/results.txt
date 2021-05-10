@@ -1,0 +1,269 @@
+--- Test MyLinkedList & LinkedList ---
+--- Добавление ---
+1) [size = 10000]:
+MyLinkedList: 4855199
+java.util.LinkedList: 1803700
+2) [size = 500000]:
+MyLinkedList: 61911999
+java.util.LinkedList: 58630900
+3) [size = 4000000]:
+MyLinkedList: 434840200
+java.util.LinkedList: 523077100
+4) [size = 20000000]:
+MyLinkedList: 2279345600
+java.util.LinkedList: 2257098800
+
+--- Поиск ---
+0) [size = 10000]:
+MyLinkedList: 1071501
+java.util.LinkedList: 6901
+1) [size = 500000]:
+MyLinkedList: 7890400
+java.util.LinkedList: 3000
+2) [size = 4000000]:
+MyLinkedList: 39900301
+java.util.LinkedList: 200
+3) [size = 20000000]:
+MyLinkedList: 214053999
+java.util.LinkedList: 200
+
+--- Удаление ---
+0) [size = 10000]:
+MyLinkedList: 255599
+java.util.LinkedList: 1451600
+1) [size = 500000]:
+MyLinkedList: 4417600
+java.util.LinkedList: 28152401
+2) [size = 4000000]:
+MyLinkedList: 8404700
+java.util.LinkedList: 49792100
+3) [size = 20000000]:
+MyLinkedList: 72778600
+java.util.LinkedList: 218945900
+
+--- Очистка ---
+0) [size = 10000]:
+MyLinkedList: 32299
+java.util.LinkedList: 44099
+1) [size = 500000]:
+MyLinkedList: 3076000
+java.util.LinkedList: 2286400
+2) [size = 4000000]:
+MyLinkedList: 29753800
+java.util.LinkedList: 27058100
+3) [size = 20000000]:
+MyLinkedList: 165772000
+java.util.LinkedList: 402038599
+
+
+
+--- Test ArrayList & LinkedList ---
+--- Добавление ---
+1) [size = 10000]:
+java.util.ArrayList: 2525000
+java.util.LinkedList: 1601700
+2) [size = 500000]:
+java.util.ArrayList: 94035101
+java.util.LinkedList: 21724900
+3) [size = 4000000]:
+java.util.ArrayList: 196406701
+java.util.LinkedList: 356346899
+4) [size = 20000000]:
+java.util.ArrayList: 770098001
+java.util.LinkedList: 1771363300
+
+--- Поиск ---
+0) [size = 10000]:
+java.util.ArrayList: 1900
+java.util.LinkedList: 901
+1) [size = 500000]:
+java.util.ArrayList: 100
+java.util.LinkedList: 100
+2) [size = 4000000]:
+java.util.ArrayList: 0
+java.util.LinkedList: 100
+3) [size = 20000000]:
+java.util.ArrayList: 200
+java.util.LinkedList: 100
+
+--- Удаление ---
+0) [size = 10000]:
+java.util.ArrayList: 702400
+java.util.LinkedList: 58400
+1) [size = 500000]:
+java.util.ArrayList: 10401099
+java.util.LinkedList: 3066199
+2) [size = 4000000]:
+java.util.ArrayList: 18558100
+java.util.LinkedList: 42625100
+3) [size = 20000000]:
+java.util.ArrayList: 309966999
+java.util.LinkedList: 225895400
+
+--- Очистка ---
+0) [size = 10000]:
+java.util.ArrayList: 4400
+java.util.LinkedList: 49300
+1) [size = 500000]:
+java.util.ArrayList: 207199
+java.util.LinkedList: 2226100
+2) [size = 4000000]:
+java.util.ArrayList: 1677100
+java.util.LinkedList: 20139301
+3) [size = 20000000]:
+java.util.ArrayList: 8013400
+java.util.LinkedList: 158964400
+
+
+
+--- Test HashSet & LinkedHashSet & TreeSet ---
+--- Добавление ---
+1) [size = 10000]:
+java.util.HashSet: 1706201
+java.util.LinkedHashSet: 3536801
+java.util.TreeSet: 3362500
+2) [size = 500000]:
+java.util.HashSet: 40888800
+java.util.LinkedHashSet: 16451200
+java.util.TreeSet: 27729200
+3) [size = 4000000]:
+java.util.HashSet: 84221899
+java.util.LinkedHashSet: 94819600
+java.util.TreeSet: 133758801
+4) [size = 20000000]:
+java.util.HashSet: 463153100
+java.util.LinkedHashSet: 468296200
+java.util.TreeSet: 680217800
+
+--- Поиск ---
+0) [size = 10000]:
+java.util.HashSet: 100
+java.util.LinkedHashSet: 100
+java.util.TreeSet: 100
+1) [size = 500000]:
+java.util.HashSet: 100
+java.util.LinkedHashSet: 100
+java.util.TreeSet: 100
+2) [size = 4000000]:
+java.util.HashSet: 300
+java.util.LinkedHashSet: 0
+java.util.TreeSet: 100
+3) [size = 20000000]:
+java.util.HashSet: 300
+java.util.LinkedHashSet: 100
+java.util.TreeSet: 0
+
+--- Удаление ---
+0) [size = 10000]:
+java.util.HashSet: 8700
+java.util.LinkedHashSet: 8300
+java.util.TreeSet: 40601
+1) [size = 500000]:
+java.util.HashSet: 38199
+java.util.LinkedHashSet: 17000
+java.util.TreeSet: 26800
+2) [size = 4000000]:
+java.util.HashSet: 31500
+java.util.LinkedHashSet: 6201
+java.util.TreeSet: 33500
+3) [size = 20000000]:
+java.util.HashSet: 39200
+java.util.LinkedHashSet: 13700
+java.util.TreeSet: 33000
+
+--- Очистка ---
+0) [size = 10000]:
+java.util.HashSet: 14724200
+java.util.LinkedHashSet: 14598100
+java.util.TreeSet: 2099
+1) [size = 500000]:
+java.util.HashSet: 31219000
+java.util.LinkedHashSet: 32967000
+java.util.TreeSet: 2100
+2) [size = 4000000]:
+java.util.HashSet: 42395800
+java.util.LinkedHashSet: 34700701
+java.util.TreeSet: 2000
+3) [size = 20000000]:
+java.util.HashSet: 121394200
+java.util.LinkedHashSet: 151770200
+java.util.TreeSet: 2299
+
+
+
+--- Test HashMap & LinkedHashMap & TreeMap ---
+--- Добавление ---
+1) [size = 10000]:
+java.util.HashMap: 4646800
+java.util.LinkedHashMap: 13622500
+java.util.TreeMap: 3475800
+2) [size = 500000]:
+java.util.HashMap: 39122100
+java.util.LinkedHashMap: 35483801
+java.util.TreeMap: 43549001
+3) [size = 4000000]:
+java.util.HashMap: 262620000
+java.util.LinkedHashMap: 231081000
+java.util.TreeMap: 258092200
+4) [size = 20000000]:
+java.util.HashMap: 825656600
+java.util.LinkedHashMap: 706310000
+java.util.TreeMap: 810222600
+
+--- Поиск ---
+0) [size = 10000]:
+java.util.HashMap: 8000
+java.util.LinkedHashMap: 2000
+java.util.TreeMap: 5999
+1) [size = 500000]:
+java.util.HashMap: 38800
+java.util.LinkedHashMap: 24300
+java.util.TreeMap: 6400
+2) [size = 4000000]:
+java.util.HashMap: 2601
+java.util.LinkedHashMap: 18001
+java.util.TreeMap: 74900
+3) [size = 20000000]:
+java.util.HashMap: 30500
+java.util.LinkedHashMap: 11599
+java.util.TreeMap: 4000
+
+--- Удаление ---
+0) [size = 10000]:
+java.util.HashMap: 9500
+java.util.LinkedHashMap: 3200
+java.util.TreeMap: 14600
+1) [size = 500000]:
+java.util.HashMap: 32500
+java.util.LinkedHashMap: 16000
+java.util.TreeMap: 10700
+2) [size = 4000000]:
+java.util.HashMap: 10001
+java.util.LinkedHashMap: 3899
+java.util.TreeMap: 6500
+3) [size = 20000000]:
+java.util.HashMap: 41999
+java.util.LinkedHashMap: 18000
+java.util.TreeMap: 4100
+
+--- Очистка ---
+0) [size = 10000]:
+java.util.HashMap: 1000
+java.util.LinkedHashMap: 3599
+java.util.TreeMap: 1400
+1) [size = 500000]:
+java.util.HashMap: 37799
+java.util.LinkedHashMap: 16300
+java.util.TreeMap: 1100
+2) [size = 4000000]:
+java.util.HashMap: 8000
+java.util.LinkedHashMap: 2600
+java.util.TreeMap: 1400
+3) [size = 20000000]:
+java.util.HashMap: 28999
+java.util.LinkedHashMap: 8501
+java.util.TreeMap: 800
+
+done.
+
+Process finished with exit code 0
